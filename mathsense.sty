@@ -1,0 +1,22 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathsense}[2016/11/02 MathSense package]
+
+\RequirePackage{amssymb} % Contains many math symbols
+
+% Wraps the arguments in angle brackets.
+\newcommand{\tuple}[1]{ \langle #1 \rangle }
+\let\phi\varphi                         % Proper phi
+\let\emptyset\varnothing                % Prettier empty set sign
+
+% If the package 'amsthm' is loaded, we change the QED symbol
+\IfFileExists{amsthm.sty}
+  { \RequirePackage{amsthm}
+    \renewcommand\qedsymbol{$\blacksquare$} % Set new QED symbol
+  }
+
+\let\Union\bigcup       % Big union
+\let\union\cup          % Small union
+\let\intersects\cap     % Small intersection
+\let\Intersects\bigcap  % Big intersections
+\let\OR\vee             % Or \/
+\let\AND\wedge          % And /\
