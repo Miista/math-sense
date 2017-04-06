@@ -2,9 +2,17 @@
 \ProvidesPackage{mathsense}[2016/11/02 MathSense package]
 
 \RequirePackage{amssymb} % Contains many math symbols
+\RequirePackage{amsfonts} % Provide fonts for Blackboard Bold
+
+\newcommand{\automath}[1]{%
+  % if in math mode, print as normal
+  % otherwise, wrap the argument in $$
+  \ifmmode#1\else$#1$\fi%
+}
 
 % Wraps the arguments in angle brackets.
-\newcommand{\tuple}[1]{ \langle #1 \rangle }
+\newcommand{\tuple}[1]{\automath{\langle#1\rangle}}
+
 \let\phi\varphi                         % Proper phi
 \let\emptyset\varnothing                % Prettier empty set sign
 
@@ -20,3 +28,20 @@
 \let\Intersects\bigcap  % Big intersections
 \let\OR\vee             % Or \/
 \let\AND\wedge          % And /\
+
+
+% Number Classes {{{
+\newcommand{\N}{%   Natural numbers
+  \automath{ \mathbb{N} }
+}
+
+\newcommand{\R}{%   Real numbers
+  \automath{ \mathbb{R} }
+}
+
+\newcommand{\Q}{%   Complex numbers
+  \automath{ \mathbb{Q} }
+}
+% }}}
+
+% vim: foldmethod=marker
