@@ -53,8 +53,11 @@
   \automath{ \mathbb{Z} }
 }
 
-\newcommand{\C}{%   Complex numbers
-  \automath{ \mathbb{C} }
+% We use renew here because \C might have been defined
+% if using XeLaTeX or by loading hyperref:
+% https://tex.stackexchange.com/a/2968
+\renewcommand{\C}{%   Complex numbers
+ \automath{ \mathbb{C} }
 }
 % }}}
 
