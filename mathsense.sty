@@ -4,11 +4,13 @@
 \RequirePackage{amssymb} % Contains many math symbols
 \RequirePackage{amsfonts} % Provide fonts for Blackboard Bold
 
+% Internal {{{
 \newcommand{\automath}[1]{%
   % if in math mode, print as normal
   % otherwise, wrap the argument in $$
   \ifmmode#1\else$#1$\fi%
 }
+% }}}
 
 % Wraps the arguments in angle brackets.
 \newcommand{\tuple}[1]{\automath{\langle#1\rangle}}
